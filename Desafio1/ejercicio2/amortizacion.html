@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">  
+	<link rel="stylesheet" href="ejercicio2//css/salario.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>amortizacion</title>
+</head>
+<body>
+    <header style="height: 70px">
+    </header> 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow-lg p-3 mb-5 bg-white ">
+                    
+                         <h1>Calculadora de tabla de amortizacion</h1>
+                    
+   
+    <form name="datos" method="POST" action="prestar.php" onsubmit="return Validadatos()">
+        <br>
+        "Sistema de Amortizacion:"
+        <select name="sistema" size="1" id="sistema">
+            <option value="1">Sistema frances: Cuota fija,Amortizacion creciente, Interes decreciente</option>
+            <option value="2">Sitema aleman: Cuota decreciente,Amortizacion fija, interes sobre saldo</option>
+            <option value="3">Sistema americano: PAgo periodico y devolucion de capital al final</option>
+            <option value="4">Sistema simple: Cuota, amortizacion e interez fijo</option>
+            <option value="5">Sistema compuesto: Interes sobre interes</option>
+        </select>
+        <br><br>
+        Fecha del desembolso (d/m/a):
+        <select name="dia" id="dia">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select name="mes" id="mes">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select name="year" id="year">
+            <option value="2020">2020</option>
+            <option value="2021" selected>2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2024">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+        </select>
+        <br>
+        <br>
+        Importe de del prestamo:
+        <input type="text" name="monto" value="0" maxlength="8">
+        <br>
+        <br>
+        Periodo:
+        <select name="periodo" id="periodo" onchange="Rotulo()">
+        <option value="diario">Diario</option>
+        <option value="semanal">Semanal</option>
+        <option value="quincenal">Quincenal</option>
+        <option value="mensual">Mensual</option>
+        <option value="anual">Anual</option>
+        </select>
+        <br>
+        <br>
+        Interes
+        <label id="lblPeriodo">Diario: </label>
+        :
+        <input type="text" name="interes" value="0" maxlength="6">
+        <br>
+        <br>
+        Plazo:
+        <input type="text" name="plazo" maxlength="4">
+        <label id="lblplazo">Dias</label>
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit" name="calcular" value="calcular">Enviar</button>
+       
+
+    </form>
+</div>
+</div>
+    <script>
+        /*function ValidaDatos() {      
+	//valida fecha
+	mes = document.getElementById("mes").value; 
+	dia = document.getElementById("dia").value; 
+	if ( (dia>28 && mes==2) || (dia>30 && (mes==4 || mes==6 || mes==9 || mes==11)) ) { 
+      alert("La fecha es incorrecta."); 
+	  document.getElementById("dia").focus();
+	  return false; 
+    }
+	valor = document.getElementById("monto").value;
+    if (valor==null || valor.length==0 || valor<=0 || isNaN(valor) ) { 
+      alert("Registre un monto mayor a 0 para el importe del prestamo."); 
+	  document.getElementById("monto").focus();
+	  return false; 
+    }
+	valor = document.getElementById("plazo").value;
+    if (valor==null || valor.length==0 || valor<=0 || isNaN(valor) ) { 
+      alert("Registre un monto mayor a 0 para el plazo."); 
+	  document.getElementById("plazo").focus();
+	  return false; 
+    }
+}
+function Rotulo() {
+    var x = document.getElementById("periodo").value;
+    document.getElementById("lblPeriodo").innerHTML = x; 
+    
+    if(x=='diario')
+        document.getElementById("lblPlazo").innerHTML = 'd&iacute;as';   
+    else if(x=='semanal')
+        document.getElementById("lblPlazo").innerHTML = 'semanas';   
+    else if(x=='quincenal')
+        document.getElementById("lblPlazo").innerHTML = 'quincenas';   
+    else if(x=='mensual')
+        document.getElementById("lblPlazo").innerHTML = 'meses';   
+    else
+        document.getElementById("lblPlazo").innerHTML = 'a&ntilde;os';   
+}*/
+    </script>
+</body>
+</html>
