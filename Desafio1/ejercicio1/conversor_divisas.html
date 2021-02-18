@@ -6,32 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">  
 	<link rel="stylesheet" href="estilos.css">
-    <title>Document</title>
+    <title>Conversor de Divisas</title>
 </head>
 <body>
-    <header style="height: 70px">
-    </header> 
-  
- 
-   <div style="height: 30px;"></div>
-   <div class="container">
-       <div class="row">
+   <div style="height: 20px;"></div>
+   <div class="container h-100">
+       <div class="row align-items-center h-100 ">
            <div class="col-lg-12">
            <div class="card shadow-lg p-3 mb-5 bg-white ">
-                <header id="inset">
+               
                     <h1>Conversor de Divisas</h1>
-                </header>
+            
                 <div class="card-body">
 <form action="3.5.proc.php" method="post" name="conversor" class="formoid-solid-purple">  
    <div class="title">
     <h2>Introduzca el valor:</h2>
 </div>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" name="valor" onChange="validarnumero(valor);" placeholder="ingrese el valor" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<div class="input-group md-6 ">
+    <input type="text" class="form-control" name="valor" onChange="validarnumero(valor);" placeholder="Ingrese el valor" aria-label="Recipient's username" aria-describedby="basic-addon2">
     <div class="input-group-append">
       <span class="input-group-text" id="basic-addon2">$</span>
     </div>
   </div>
+  <br>
      
      
             
@@ -56,7 +53,8 @@
              <option value="yen1">Yen</option>
              
          </select>
-         </label> <br /> <br />
+         </label>
+          <br /> <br />
          <button class="btn btn-primary" type="submit">Enviar</button>
          <button class="btn btn-primary" type="reset" value=”reincia”>Reiniciar</button>
          </form>

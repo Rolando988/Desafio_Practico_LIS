@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">  
+	<link rel="stylesheet" href="css/salario.css">
+    <link rel="stylesheet" href="estilos.css">
+    
     <title>Document</title>
 </head>
 <body>
-    <header id="inset">
+<header style="height: 70px">
+    </header> 
+    <br>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow-lg p-3 mb-5 bg-white ">
+   
         <h2>Calculadora del prestamo</h2>
-    </header>
+    
     <section>
         <article>
             <?php
@@ -26,7 +37,7 @@
             echo "Fecha del prestamo:"; 
             echo "\t<br>$dia/$mes/$year";
             echo "\t<br>Monto: $monto.00\n\t\t";
-            echo " \n\tInteres: $interes .00%";
+            echo " \t<br>Interes: $interes .00%";
             echo "\t<br>Periodo: $perido";
             echo "\n\t <br>Plazo: $plazo";
             echo "<br>";
@@ -36,5 +47,12 @@
             ?>
         </article>
     </section>
+   
+        </div>
+        </div>
+        </div>
+         <a href="amortizacion.html" class="a-btn">
+    <span class="a-btn-text">Regresar</span>
+</a>
 </body>
 </html>

@@ -12,11 +12,14 @@
     <script src="jquery/jquery-3.3.1.min.js"></script>	 	
     <script src="popper/popper.min.js"></script>	 	 	
     <script src="bootstrap4/js/bootstrap.min.js"></script> 
-    <title>Document</title>
+    <title>Conversor de divisas</title>
 </head>
 <body>
-    <div class="container">
-    <div class="row">
+    <div class="container h-100">
+    <div class="row align-items-center h-100">
+    <div class="col-12 ">
+            <div class="jumbotron">
+           <div class="card shadow-lg p-3 mb-5 bg-white ">
         <section>
             <article>
 <?php
@@ -34,10 +37,13 @@ $libra_yen = 145.28;
 $yen_euro = 0.0079;
 $yen_dolar = 0.0095;
 $yen_libra = 0.0069;  
+
  
 echo "<table>\n";
-echo "Tu moneda vale:";
+echo "<h1>Tu moneda vale:</h1>";
 echo "</table>\n";
+
+
 
  
 switch ($moneda and $moneda2) {
@@ -91,14 +97,18 @@ switch ($moneda and $moneda2) {
     break;                  
 }
 ?>
+<br>
 <a href="conversor_divisas.html" class="a-btn">
-    <span class="a-btn-symbol">i</span>
     <span class="a-btn-text">Ingresar</span>
     <span class="a-btn-slide-text">Nueva Divisa</span>
-    <span class="a-btn-slide-icon"></span>
+   
 </a>
 </article>
 </section>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
